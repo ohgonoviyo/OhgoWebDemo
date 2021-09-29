@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body ng-app = 'myApp' ng-controller="myCtrl">
+   
+    <div class="fixed-top">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHcAAAB3CAMAAAAO5y+4AAAAgVBMVEX1xRgAAAD4xxjcsRb8yxnnuhfuvxf////YrhUGBQBdSwnDnBOhghAtJQT1wwNiTwpLPAeZew8WEgL768H99+j2yT741Xj2yDK3kxHhtRZVRQgaFQNRQQj/0BpsVwt6YgwmHwQ6LgasixGPcw7OpRSEag1CNQcfGQP/3Rv/1xsQDQIKezJDAAACj0lEQVRoge2ba5OqIBiACYFau9l22bRQ16w9Z///DzxIQujxXoszO+/zweFFh8dSgZcZ0FSwPXwgW3wctpkSTae7/WplTYvQarXfZd4dsmmVZrQT3r1trRDvp2hrXyvEW3QYxXtA9t5kk3GsAAAAAAAAAAAAAABYBSsKQYc4r/q/kW7MnBwmAueBj82TIhYhdQr4jNxFTNXQzr+WThQzjNjkQUjEaSM+E0Q2kxIRzcR4ruIL6e19K3kDcdI3Yld4F2WvuFtiejfPe2NmtFfvPbEXeycUFzw13kz1Wm+KybWD95O/2JsQHNZ5LxdPFZf4xd4rQZ4RFrwOZ98/5Q0JO9V5Zxifq72YCDVp7T8avB6iZlj2riu9nG7WQRDO23quBm/MZr29i2NeOLNmcYN34h/NqJP3pi9fDvm9sTymslv8PPXwGjR3mdVe9z07JlF2XC+HeW+svzdws2MkP99rH683P8aqTJuecI33Iu9YfipJ3MO74VyPWQO850TWyK4h/erjJSR5xms8MNrnvRJe/REM8HqPgfeLvlv0cu0NmE3vH+292vXqkWhh1fs3UtVHu96Hwe57pVtCdr2OquZ13uBHvOjtXrrVedGyxvtMf+VxnveOEan0+lz3LGWvvmaY11UNVXqjqx52Ct41o2reNcxLLvfSsdprUJg/G8QDxl/hzV+PtNVbyBcMwgHzDY/jVP1ZLd5ifmTgNE7sar3OfV7O27zFfHC+1qXmGXx1/iueGZLeb64n0U35bxq4kjMiiZxShk5r4lCV74tcH+ukv0O+rxYaRIGIi3zWYcGhcv3CbKnL+kapwVYpAAAAAAAAAAAAAAC/g7H2a4y1P2Ws/Thj7T8abb/VWPvLxtlP9w9lWzTR4rKV6QAAAABJRU5ErkJggg==" width="40" height="40" class="d-inline-block align-top" alt="">
+             <span style="font-weight: bold;">IMDB BROWSER</span>
+            </a>
+        </nav>
+        <div class="jumbotron">
+            <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
+                <input class="form-control mr-md-2" type="search" placeholder="Search" aria-label="Search" ng-model="moviename" ng-change="myfunction(moviename)">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" ng-click="myfunction(moviename)">Search</button>
+            </form>
+          </div>
+    </div> 
+    
+    <div style="overflow: scroll;">
+       
+        <div class="card" style="width: 100%;margin-top: 250px;" ng-if="moviename">
+            <img class="card-img-top" src="{{moviePoster}}" alt="Card image cap">
+            <div class="card-body">
+              <h3 class="card-title">{{movieTitle}}</h5>
+              <h5>STORY</h5>
+              <p class="card-text">{{moviePlot}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><span style="font-size: large;font-weight: 700;">YEAR</span>  {{movieYear}}</li>
+              <li class="list-group-item"><span style="font-size: large;font-weight: 700;">PRODUCTION</span>  {{movieProduction}}</li>
+              <li class="list-group-item"><span style="font-size: large;font-weight: 700;">DIRECTOR</span> {{movieDirector}}</li>
+              <li class="list-group-item"><span style="font-size: large;font-weight: 700;">WRITER</span> {{movieWriter}}</li>
+              <li class="list-group-item"><span style="font-size: large;font-weight: 700;">IMDB RATING</span> {{movieimdbRating}}</li>
+              <li class="list-group-item"><span style="font-size: large;font-weight: 700;">RATINGS</span> {{movieRated}}</li>
+              <li class="list-group-item"><span style="font-size: large;font-weight: 700;">DATE OF RELEASE </span>{{movieReleased}}</li>
+              <li class="list-group-item"><span style="font-size: large;font-weight: 700;">RUN TIME </span>{{movieRuntime}}</li>
+              <li class="list-group-item"><span style="font-size: large;font-weight: 700;">CAST</span> {{movieActors}}</li>
+              <li class="list-group-item"><span style="font-size: large;font-weight: 700;">AWARDS </span>{{movieAwards}}</li>
+            </ul>
+            <div class="card-body">
+              <a type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModalLong">More Info</a>
+            </div>
+          </div>
+    </div>
+    <!-- Button trigger modal -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">IMDB BROWSER</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <ul class="list-group">
+                <li class="list-group-item"><h4> More Details About This Film</h4></li>
+              
+                
+                <li class="list-group-item list-group-item-primary" style="font-weight: bolder;"><span style="font-size: large;font-weight: 700;">Box Offic Collection </span>{{movieBoxOffice}}</li>
+                <li class="list-group-item list-group-item-secondary" style="font-weight: bolder;"><span style="font-size: large;font-weight: 700;">Countrys </span>{{movieCountrye}}</li>
+                <li class="list-group-item list-group-item-success" style="font-weight: bolder;"><span style="font-size: large;font-weight: 700;">DVD </span>{{movieDVD}}</li>
+                <li class="list-group-item list-group-item-danger" style="font-weight: bolder;"><span style="font-size: large;font-weight: 700;">Genere </span>{{movieGenre}}</li>
+                <li class="list-group-item list-group-item-warning" style="font-weight: bolder;"><span style="font-size: large;font-weight: 700;">Language </span>{{movieLanguage}}</li>
+                <li class="list-group-item list-group-item-info" style="font-weight: bolder;"><span style="font-size: large;font-weight: 700;">IMDB VOTES </span>{{movieimdbVotes}}</li>
+    
+              </ul>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script src="imdbjs.js"></script>
+</body>
+</html>
