@@ -39,7 +39,8 @@ app.controller('myCtrl', function($scope, $http) {
               $scope.movieimdbRating = response.data.imdbRating;
               $scope.movieimdbID = response.data.imdbID;
               $scope.movieimdbVotes = response.data.imdbVotes;
-           
+              //
+              $scope.movieimdbUrl = "https://www.imdb.com/title/"+movieimdbID+"/"
 
           }, function myError(response) {
              console.log("Error occured")

@@ -29,7 +29,8 @@
     </div> 
     
     <div style="overflow: scroll;">
-       
+      
+        
         <div class="card" style="width: 100%;margin-top: 250px;" ng-if="moviename">
             <img class="card-img-top" src="{{moviePoster}}" alt="Card image cap">
             <div class="card-body">
@@ -50,6 +51,7 @@
               <li class="list-group-item"><span style="font-size: large;font-weight: 700;">AWARDS </span>{{movieAwards}}</li>
             </ul>
             <div class="card-body">
+              <a href="{{movieimdbUrl}}" target="_blank" class="btn btn-outline-info" >IMDB Orgin</a>
               <a type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModalLong">More Info</a>
             </div>
           </div>
