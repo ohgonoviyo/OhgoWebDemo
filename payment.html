@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <title>Document</title>
 </head>
 <body ng-app = 'myApp' ng-controller="myCtrl">
@@ -91,7 +92,7 @@
                     User friendly interface<br> 
                     24/7 Customer support <br>
                 </p>         
-                <button style="background: linear-gradient(to bottom,#ff0000,#ff0000);border-color: #ff0000; border-radius: 10px;width: 90%;height: 55px; color: white;margin-bottom: 20px;"><span style="font-size: large;font-weight: 600;">$540.00</span>/Quarter + GST</button>
+                <button style="background: linear-gradient(to bottom,#ff0000,#ff0000);border-color: #ff0000; border-radius: 10px;width: 90%;height: 55px; color: white;margin-bottom: 20px;" ng-click="myfunction(540)"><span style="font-size: large;font-weight: 600;">$540.00</span>/Quarter + GST</button>
             </div>
           </div>
           <div class="carousel-item">
@@ -113,7 +114,7 @@
                     <br> 
                     <br> 
                 </p>         
-                <button style="background: linear-gradient(to bottom,#ff0000,#ff0000);border-color: #ff0000; border-radius: 10px;width: 90%;height: 55px; color: white;margin-bottom: 20px;"><span style="font-size: large;font-weight: 600;">$1460.00</span>/Year + GST</button>
+                <button style="background: linear-gradient(to bottom,#ff0000,#ff0000);border-color: #ff0000; border-radius: 10px;width: 90%;height: 55px; color: white;margin-bottom: 20px;" ng-click="myfunction(1460)"><span style="font-size: large;font-weight: 600;">$1460.00</span>/Year + GST</button>
             </div>
           </div>
         </div>
