@@ -8,7 +8,7 @@ $scope.options = {
   "key": "rzp_test_FkRo6rT2vfxK34", // Enter the Key ID generated from the Dashboard
   "amount": 0, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
   "currency": "INR",
-  "name": "Acme Corp",
+  "name": "Ohgo India",
   "description": "Test Transaction",
   "image": "https://github.com/ohgonoviyo/OhgoWebDemo/blob/master/asset/Ohgo%20Icon.jpeg?raw=true",
   "order_id": "order_I7uPHk0Aej1PHq", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
@@ -19,7 +19,7 @@ $scope.options = {
   },
   "prefill": {
       "name": "falihpangat",
-      "email": "falihpangat@example.com",
+      "email": "falihpangat@gmail.com",
       "contact": "9037400118"
   },
   "notes": {
