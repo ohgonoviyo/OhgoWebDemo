@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <title>Document</title>
 </head>
-<body ng-app = 'payment-app' ng-controller="payment-ctrl">
+<body ng-app = 'myApp' ng-controller="myCtrl">
     <div class="fixed-top">
         <div class="header" style="background-color: rgb(255 31 31);height: 42px;">
             <label  style="margin-top: 5px;margin-left: 35px;color: white;font-weight: 500;">Renewal/Upgrade</label>
@@ -69,7 +69,7 @@
                     User friendly interface <br> 
                     24/7 Customer support <br>
                 </p>         
-                <button style="background: linear-gradient(to bottom,#ff0000,#ff0000);border-color: #ff0000; border-radius: 10px;width: 90%;height: 55px; color: white;margin-bottom: 20px;" onclick="myfunction()"><span style="font-size: large;font-weight: 600;">$490.00</span>/Month + GST</button>
+                <button style="background: linear-gradient(to bottom,#ff0000,#ff0000);border-color: #ff0000; border-radius: 10px;width: 90%;height: 55px; color: white;margin-bottom: 20px;" ng-click="myfunction(490)"><span style="font-size: large;font-weight: 600;">$490.00</span>/Month + GST</button>
             </div>
           </div>
           <div class="carousel-item">
@@ -123,7 +123,7 @@
     <script>
     
     </script>
-    <script src="app.js"></script>
+    <script src="payment.js"></script>
 </div> 
 </body>
 </html>
