@@ -41,11 +41,11 @@ $scope.rzp1.on('payment.failed', function (response){
       alert(response.error.metadata.payment_id);
 });
 
-$scope.myfunction= function(amount){
+$scope.myfunction= function(amount,$event){
     console.log("amount",amount); 
     $scope.options.amount = amount * 100;
     $scope.rzp1.open();
-    amount.preventDefault();
+    $event.preventDefault();
     
     
 }
